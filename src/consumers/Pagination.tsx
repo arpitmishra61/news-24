@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+
 import {
   RootStateOrAny,
   useDispatch,
   useSelector,
-  useStore,
+
 } from "react-redux";
 import "./../sass/pagination.scss";
 
