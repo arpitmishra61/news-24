@@ -1,11 +1,7 @@
 # News 24X7 Application
 This project build in react 
 
-## See Live
 
-
-
- [Live here ](https://reactjs.org/).
 ## Available Scripts
 
 In the project directory, you can run:
