@@ -1,10 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux"
-import "../sass/newsShowcase.scss"
-import {datas} from "./../../src/news"
 
-let myNews=datas[0].articles
+import "../sass/newsShowcase.scss"
+
+
+
 const showNews=(news:any[], dispatch:any, dateSort:string, setDateSort:any)=>{
     return (
         <section className="newsShowcase ">
@@ -41,7 +42,7 @@ keyboard_arrow_up
   <tbody>
             { news.map((data:any, index:number)=>{
                
- return <tr>
+ return <tr key={index}>
                   <td className="image">
                       <img src={data.urlToImage} alt="" width="124px"/>
                   </td>
@@ -74,7 +75,7 @@ else
     }}>{dateSort==="inc" ?  <button className="waves-effect waves-light btn blue">sort by date</button> : <button className="waves-effect waves-light btn  blue">Unsort by date</button>  }</div>
             
          { news.map((data:any, id:number)=>{
-          return <div className="detail card">
+          return <div className="detail card" key={id}>
                  <div className="imgContainer">
 <img src={data.urlToImage} alt="" width="224px"/>
 <h5 className="blue white-color">Source: {data.source.name}</h5>
@@ -105,7 +106,7 @@ export default function NewsShowcase() {
     
          axios.get("https://newsapi.org/v2/everything?q=covid&pageSiz=100&apiKey=fabfc618385d4dc3a501709f13000d2d").then((res)=>{
              let data=res.data
-             console.log(data.articles)
+     
             
            
              dispatch({payload:{totalNews:data.articles, news: data.articles.slice(0,5), loading:false, page:1}, type:"getNewsDetail"})
