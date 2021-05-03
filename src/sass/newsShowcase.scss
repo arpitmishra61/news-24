@@ -1,0 +1,72 @@
+body {
+  overflow-x: hidden;
+}
+.newsShowcase {
+  .smallView {
+    display: none;
+  }
+  overflow-x: hidden;
+  table {
+    margin-top: 100px !important;
+    width: 90%;
+    margin: auto;
+    tr.mainTitle {
+      background-color: rgb(46, 46, 46);
+      color: white;
+    }
+    td {
+      text-align: center;
+    }
+
+    td.title {
+      font-weight: 600;
+    }
+    th {
+      text-align: center;
+      cursor: pointer;
+      align-items: center;
+
+      &:nth-child(odd) {
+        background-color: dodgerblue;
+      }
+    }
+
+    th.authorMain {
+      width: 20%;
+    }
+  }
+
+  .smallView {
+    .detail {
+      h5 {
+        color: white;
+        padding: 5px;
+      }
+      margin-bottom: 50px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      img {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .newsShowcase {
+    table {
+      display: none;
+    }
+    .smallView {
+      display: block;
+      h4 {
+        font-size: 22px;
+      }
+
+      button {
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
